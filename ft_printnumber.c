@@ -6,7 +6,7 @@
 /*   By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/09 16:44:16 by tfarenga          #+#    #+#             */
-/*   Updated: 2020/06/11 15:06:55 by tfarenga         ###   ########.fr       */
+/*   Updated: 2020/06/11 15:17:39 by tfarenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ int					ft_print_d_i(int num, t_parsing flag)
 
 	count = 0;
 	definition = flag.precision;
-	if (array == NULL)
-		return (-1);
 	flag = ft_instal_flag(&definition, num < 0, flag);
 	if (flag.dot && definition == 0 && num == 0 && flag.zero == 0)
 		array = ft_strdup("");
 	else
 		array = ft_itoa_u_x(num, 10, definition);
+	if (array == NULL)
+		return (-1);
 	count = ft_printstr(array, flag);
 	free(array);
 	return (count);
@@ -55,13 +55,13 @@ int					ft_print_u(unsigned int num, t_parsing flag)
 
 	count = 0;
 	definition = flag.precision;
-	if (array == NULL)
-		return (-1);
 	flag = ft_instal_flag(&definition, 0, flag);
 	if (flag.dot && definition == 0 && num == 0 && flag.zero == 0)
 		array = ft_strdup("");
 	else
 		array = ft_itoa_u_x(num, 10, definition);
+	if (array == NULL)
+		return (-1);
 	count = ft_printstr(array, flag);
 	free(array);
 	return (count);
@@ -77,13 +77,13 @@ int					ft_print_x(unsigned int num, t_parsing flag)
 	count = 0;
 	index = -1;
 	definition = flag.precision;
-	if (array == NULL)
-		return (-1);
 	flag = ft_instal_flag(&definition, 0, flag);
 	if (flag.dot && definition == 0 && num == 0 && flag.zero == 0)
 		array = ft_strdup("");
 	else
 		array = ft_itoa_u_x(num, 16, definition);
+	if (array == NULL)
+		return (-1);
 	if (flag.specifier == 'X')
 		while (array[index])
 		{
