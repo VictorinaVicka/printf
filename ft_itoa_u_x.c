@@ -6,7 +6,7 @@
 /*   By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 10:14:57 by tfarenga          #+#    #+#             */
-/*   Updated: 2020/06/10 17:10:25 by tfarenga         ###   ########.fr       */
+/*   Updated: 2020/06/11 15:04:12 by tfarenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	size(unsigned int a, int system, int defin)
 	return (len);
 }
 
-char	*ft_itoa_u_x(unsigned int n, int system, int defin)
+char		*ft_itoa_u_x(unsigned int n, int system, int defin)
 {
 	char	*resu;
 	size_t	index;

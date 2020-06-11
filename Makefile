@@ -6,7 +6,7 @@
 #    By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/29 15:18:22 by tfarenga          #+#    #+#              #
-#    Updated: 2020/05/29 15:24:24 by tfarenga         ###   ########.fr        #
+#    Updated: 2020/06/11 13:09:28 by tfarenga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,20 @@ CLANG = clang
 
 FLAG = -Wall -Wextra -Werror
 
-SRC =
+SRC = ft_atoi.c ft_isdigit.c ft_itoa_u_x.c ft_other.c ft_print_init.c ft_printf.c \
+ft_printnumber.c ft_printp.c ft_printstr.c ft_strdup.c ft_toupper.c
 
 OBJ = $(SRC:.c=.o)
 
+.PHONY: all clean fclean re
+
 all: $(NAME)
+
+$(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-%.o : %.c libft.h
+%.o : %.c
 	$(CLANG) $(FLAG) -c -o $@ $<
 
 clean:

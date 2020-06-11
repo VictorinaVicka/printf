@@ -6,13 +6,13 @@
 /*   By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 15:53:00 by tfarenga          #+#    #+#             */
-/*   Updated: 2020/06/08 16:54:13 by tfarenga         ###   ########.fr       */
+/*   Updated: 2020/06/11 15:05:25 by tfarenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	ft_space(t_parsing flag, int len)
+static int			ft_space(t_parsing flag, int len)
 {
 	int	count;
 
@@ -29,7 +29,7 @@ static int	ft_space(t_parsing flag, int len)
 	return (count);
 }
 
-int	ft_printchar(char c, t_parsing flag)
+int					ft_printchar(char c, t_parsing flag)
 {
 	int	count;
 
@@ -58,15 +58,15 @@ static t_parsing	ft_determine_width(t_parsing flag, int *len)
 	return (flag);
 }
 
-int ft_printstr(char *str, t_parsing flag)
+int					ft_printstr(char *str, t_parsing flag)
 {
 	int	count;
 	int	len;
 
-	count = 0;
-	len = ft_strlen(str);
 	if (str == NULL)
 		return (ft_printstr("null", flag));
+	count = 0;
+	len = ft_strlen(str);
 	flag = ft_determine_width(flag, &len);
 	if (flag.minus == 0)
 	{

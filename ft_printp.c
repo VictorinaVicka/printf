@@ -6,7 +6,7 @@
 /*   By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/09 11:47:04 by tfarenga          #+#    #+#             */
-/*   Updated: 2020/06/10 10:44:48 by tfarenga         ###   ########.fr       */
+/*   Updated: 2020/06/11 14:51:56 by tfarenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_printp(void *p, t_parsing flag)
 {
-	int	count;
-	int	definition;
+	int		count;
+	int		definition;
 	char	*array;
 
 	count = 0;
@@ -32,7 +32,7 @@ int	ft_printp(void *p, t_parsing flag)
 	if (flag.dot && definition == 0 && p == NULL)
 		array = ft_strdup("0x");
 	else
-		array = ft_itoa_u_i(p, 10, definition);
+		array = ft_itoa_u_i(p, 16, definition);
 	count += ft_printstr(array, flag);
 	free(array);
 	return (count);

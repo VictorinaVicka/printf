@@ -6,12 +6,11 @@
 /*   By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 16:28:00 by tfarenga          #+#    #+#             */
-/*   Updated: 2020/06/10 18:11:18 by tfarenga         ###   ########.fr       */
+/*   Updated: 2020/06/11 15:08:47 by tfarenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-// counte -  число напечатанных символов
 
 static t_parsing	ft_get_form(const char **str, va_list argptr)
 {
@@ -28,7 +27,7 @@ static t_parsing	ft_get_form(const char **str, va_list argptr)
 		else if (**str == '.')
 		{
 			flag.dot = 1;
-			flag.precision = ft_precision(&(*str), argptr));
+			flag.precision = ft_precision(&(*str), argptr);
 		}
 		else if (**str == '*' || ft_isdigit(**str))
 			flag.width = ft_width(&(*str), argptr);
@@ -40,7 +39,7 @@ static t_parsing	ft_get_form(const char **str, va_list argptr)
 	return (flag);
 }
 
-static int	ft_transform(va_list argptr, t_parsing flag)
+static int			ft_transform(va_list argptr, t_parsing flag)
 {
 	if (flag.specifier == 'c')
 		return (ft_printchar(va_arg(argptr, int), flag));
@@ -61,7 +60,7 @@ static int	ft_transform(va_list argptr, t_parsing flag)
 	return (0);
 }
 
-int	ft_printf(const char *str, ...)
+int					ft_printf(const char *str, ...)
 {
 	va_list	argptr;
 	int		params;
