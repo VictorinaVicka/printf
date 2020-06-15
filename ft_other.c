@@ -6,7 +6,7 @@
 /*   By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 17:15:15 by tfarenga          #+#    #+#             */
-/*   Updated: 2020/06/10 18:23:41 by tfarenga         ###   ########.fr       */
+/*   Updated: 2020/06/15 17:34:22 by tfarenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ int	ft_precision(const char **str, va_list argptr)
 	}
 	if (ft_isdigit(*(*str + 1)))
 	{
+		(*str)++;
 		precision = ft_atoi(*str);
 		while (ft_isdigit(*(*str + 1)))
 			(*str)++;
-		(*str)--;
 	}
 	return (precision);
 }

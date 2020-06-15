@@ -6,7 +6,7 @@
 /*   By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 15:31:27 by tfarenga          #+#    #+#             */
-/*   Updated: 2020/06/11 16:58:13 by tfarenga         ###   ########.fr       */
+/*   Updated: 2020/06/15 13:06:43 by tfarenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ char			*ft_strdup(const char *str);
 size_t			ft_strlen(const char *str);
 int				ft_toupper(int ch);
 char			*ft_itoa_p(void *p, int defin);
+char			*ft_itoa_d_i(int d, int defin);
 
 #endif

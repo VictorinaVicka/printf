@@ -6,7 +6,7 @@
 /*   By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 10:14:57 by tfarenga          #+#    #+#             */
-/*   Updated: 2020/06/11 15:15:43 by tfarenga         ###   ########.fr       */
+/*   Updated: 2020/06/15 13:18:37 by tfarenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char		*ft_itoa_u_x(unsigned int n, int system, int defin)
 	if (system < 2 || system > 16)
 		return (NULL);
 	len = size(n, system, defin);
-	if (!(resu = (char *)malloc(sizeof(char) * len + 1)))
+	if (!(resu = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	while (index < len)
 	{

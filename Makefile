@@ -6,7 +6,7 @@
 #    By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/29 15:18:22 by tfarenga          #+#    #+#              #
-#    Updated: 2020/06/11 16:57:14 by tfarenga         ###   ########.fr        #
+#    Updated: 2020/06/15 13:06:55 by tfarenga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FLAG = -Wall -Wextra -Werror
 
 SRC = ft_atoi.c ft_isdigit.c ft_itoa_u_x.c ft_other.c ft_print_init.c ft_printf.c \
 ft_printnumber.c ft_printp.c ft_printstr.c ft_strdup.c ft_toupper.c ft_itoa_p.c \
-ft_strlen.c
+ft_strlen.c ft_itoa_d_i.c
 
 OBJ = $(SRC:.c=.o)
 

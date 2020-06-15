@@ -6,7 +6,7 @@
 /*   By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 15:53:00 by tfarenga          #+#    #+#             */
-/*   Updated: 2020/06/11 15:05:25 by tfarenga         ###   ########.fr       */
+/*   Updated: 2020/06/15 17:29:22 by tfarenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ static int			ft_space(t_parsing flag, int len)
 	count = 0;
 	if (flag.width < 0)
 		flag.width = -flag.width;
-	while (flag.width-- > len)
+	while (flag.width > len)
 	{
 		if (flag.zero == 1 && flag.minus == 0)
 			count += write(1, "0", 1);
 		else
 			count += write(1, " ", 1);
+		flag.width--;
 	}
 	return (count);
 }
@@ -64,7 +65,7 @@ int					ft_printstr(char *str, t_parsing flag)
 	int	len;
 
 	if (str == NULL)
-		return (ft_printstr("null", flag));
+		return (ft_printstr("(null)", flag));
 	count = 0;
 	len = ft_strlen(str);
 	flag = ft_determine_width(flag, &len);

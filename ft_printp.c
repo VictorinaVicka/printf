@@ -6,7 +6,7 @@
 /*   By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/09 11:47:04 by tfarenga          #+#    #+#             */
-/*   Updated: 2020/06/11 16:53:10 by tfarenga         ###   ########.fr       */
+/*   Updated: 2020/06/15 13:33:18 by tfarenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ int	ft_printp(void *p, t_parsing flag)
 
 	count = 0;
 	definition = flag.precision;
+	if (flag.zero && (flag.dot || flag.width < 0 || flag.minus))
+		flag.zero = 0;
 	if (flag.zero)
 	{
 		definition = flag.width - 2;
 		flag.width = 0;
 	}
-	if (flag.zero && (flag.dot || flag.width < 0 || flag.minus))
-		flag.zero = 0;
 	if (flag.dot && definition == 0 && p == NULL)
 		array = ft_strdup("0x");
 	else

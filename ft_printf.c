@@ -6,7 +6,7 @@
 /*   By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 16:28:00 by tfarenga          #+#    #+#             */
-/*   Updated: 2020/06/11 15:08:47 by tfarenga         ###   ########.fr       */
+/*   Updated: 2020/06/15 16:22:44 by tfarenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,10 @@ int					ft_printf(const char *str, ...)
 			count += ft_transform(argptr, ft_get_form(&str, argptr));
 		else
 			count += ft_printchar(*str, ft_flag_init());
-		if (count < 0 || *str == '\0')
-			break ;
 		if (count < params)
 			count = -1;
+		if (count < 0 || *str == '\0')
+			break ;
 		str++;
 	}
 	va_end(argptr);

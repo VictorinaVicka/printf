@@ -6,7 +6,7 @@
 /*   By: tfarenga <tfarenga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/11 16:41:45 by tfarenga          #+#    #+#             */
-/*   Updated: 2020/06/11 17:01:24 by tfarenga         ###   ########.fr       */
+/*   Updated: 2020/06/15 13:18:28 by tfarenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char		*ft_itoa_p(void *p, int defin)
 	index = 0;
 	a = (unsigned long int)p;
 	len = size(a, defin);
-	if (!(resu = (char *)malloc(sizeof(char) * len + 1)))
+	if (!(resu = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	while (index < len)
 	{
@@ -51,11 +51,10 @@ char		*ft_itoa_p(void *p, int defin)
 	resu[len] = '\0';
 	while (a / 16 != 0)
 	{
-		resu[len] = "0123456789abcdef"[a % 16];
+		resu[len - 1] = "0123456789abcdef"[a % 16];
 		a /= 16;
 		len--;
 	}
-	resu[len] = "0123456789abcdef"[a % 16];
-	len--;
+	resu[--len] = "0123456789abcdef"[a % 16];
 	return (resu);
 }
